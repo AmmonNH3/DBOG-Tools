@@ -338,6 +338,8 @@ class DBOGToolsApp:
 
         ttk.Label(root, text="DBOG Tools", font=("Segoe UI", 14, "bold")).pack(pady=20)
         ttk.Label(root, text="by AmmonNH3", font=("Segoe UI", 11, "bold")).pack(pady=1) 
+
+        ttk.Label(root, text="Special thanks: spxeedy on discord", font=("Segoe UI", 9)).pack(pady=4)
         
         ttk.Button(
             root,
