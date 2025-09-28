@@ -35,7 +35,34 @@ except Exception:
     keyboard = None
 
 #tesseract path :)))) (update)
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+def get_tesseract_path():
+    import sys, os
+    try:
+        base_path = sys._MEIPASS  # wiggly cat wiggling in hand
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    # wiggle cat wiggle wiggle cat on hand
+    local_path = os.path.join(base_path, "tesseract", "tesseract.exe")
+    if os.path.exists(local_path):
+        return local_path
+
+    # maybe u have it installed on windows idk
+    system_paths = [
+        r"C:\Program Files\Tesseract-OCR\tesseract.exe",
+        r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe",
+    ]
+    for path in system_paths:
+        if os.path.exists(path):
+            return path
+
+    return None
+
+tesseract_cmd = get_tesseract_path()
+if tesseract_cmd:
+    pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
+else:
+    print("Tesseract not found. Place the 'tesseract' carpet in the same path as the exe.")
 
 def preprocess_for_ocr(img_bgra: np.ndarray):
     if img_bgra is None:
@@ -345,4 +372,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
