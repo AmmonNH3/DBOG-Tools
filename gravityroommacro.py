@@ -139,7 +139,7 @@ class GameBotGUI:
 
         ttk.Separator(right, orient="horizontal").pack(fill="x", pady=6)
 
-        ttk.Label(right, text="Reading Interval (seconds)").pack(anchor="w")
+        ttk.Label(right, text="Reading Speed (seconds)").pack(anchor="w")
         f_read = ttk.Frame(right)
         f_read.pack(fill="x", pady=2)
         ttk.Scale(
@@ -148,7 +148,7 @@ class GameBotGUI:
         ttk.Label(f_read, textvariable=self.read_val_label, width=8).pack(side="left", padx=6)
 
         ttk.Separator(right, orient="horizontal").pack(fill="x", pady=6)
-        ttk.Label(right, text="Interval Presets").pack(anchor="w")
+        ttk.Label(right, text="Reading Speed Presets").pack(anchor="w")
 
         frame_presets = ttk.Frame(right)
         frame_presets.pack(fill="x", pady=4)
@@ -161,7 +161,7 @@ class GameBotGUI:
 
         ttk.Separator(right, orient="horizontal").pack(fill="x", pady=6)
 
-        ttk.Label(right, text="Typing Interval (seconds)").pack(anchor="w")
+        ttk.Label(right, text="Typing Speed (seconds)").pack(anchor="w")
         f_type = ttk.Frame(right)
         f_type.pack(fill="x", pady=2)
         ttk.Scale(
