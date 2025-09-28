@@ -69,7 +69,11 @@ def preprocess_for_ocr(img_bgra: np.ndarray):
         return None
     gray = cv2.cvtColor(img_bgra, cv2.COLOR_BGRA2GRAY)
     gray = cv2.resize(gray, None, fx=3, fy=3, interpolation=cv2.INTER_CUBIC)
-    _, th = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    # Adaptive threshold instead of Otsu
+    th = cv2.adaptiveThreshold(gray, 255,
+                               cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                               cv2.THRESH_BINARY_INV,
+                               31, 15)
     return th
 
 def recognize_text(img_bgra: np.ndarray):
@@ -372,5 +376,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
