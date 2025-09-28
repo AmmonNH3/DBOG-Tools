@@ -23,10 +23,10 @@ import os
 
 #fix
 try:
-    ctypes.windll.shcore.SetProcessDpiAwareness(2)  # Per-monitor DPI aware
+    ctypes.windll.shcore.SetProcessDpiAwareness(2)
 except Exception:
     try:
-        ctypes.windll.user32.SetProcessDPIAware()  # System DPI aware
+        ctypes.windll.user32.SetProcessDPIAware() 
     except Exception:
         pass
 
@@ -65,7 +65,6 @@ class GameBotGUI:
         self.running = False
         self.bot_thread = None
 
-        # variables
         self.interval_read = tk.DoubleVar(value=0.7)
         self.interval_type = tk.DoubleVar(value=0.04)
         self.start_key = tk.StringVar(value="F4")
@@ -104,7 +103,7 @@ class GameBotGUI:
         right = ttk.Frame(self.root)
         right.pack(side="left", fill="y", padx=8, pady=8)
 
-        ttk.Button(right, text="Select Area (Drag) / F2", command=self.open_selector).pack(fill="x", pady=4)
+        ttk.Button(right, text="Select Area (Drag)", command=self.open_selector).pack(fill="x", pady=4)
         ttk.Button(right, text="Start Macro", command=self.start_bot).pack(fill="x", pady=4)
         ttk.Button(right, text="Stop Macro", command=self.stop_bot).pack(fill="x", pady=4)
 
@@ -118,7 +117,6 @@ class GameBotGUI:
         ).pack(side="left", fill="x", expand=True)
         ttk.Label(f_read, textvariable=self.read_val_label, width=8).pack(side="left", padx=6)
 
-        # 🔹 Presets Reading Interval
         ttk.Separator(right, orient="horizontal").pack(fill="x", pady=6)
         ttk.Label(right, text="Interval Presets").pack(anchor="w")
 
@@ -148,8 +146,6 @@ class GameBotGUI:
         ttk.Label(right, text="Stop Hotkey").pack(anchor="w")
         ttk.Entry(right, textvariable=self.stop_key).pack(fill="x", pady=2)
         ttk.Button(right, text="Apply hotkeys", command=self.register_hotkeys).pack(fill="x", pady=6)
-
-        self.root.bind("<F2>", lambda e: self.open_selector())
 
     def set_reading_preset(self, value: float):
         self.interval_read.set(value)
