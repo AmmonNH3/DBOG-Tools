@@ -18,7 +18,6 @@ import pytesseract
 import re
 import os, sys
 import ctypes
-import json
 import os
 
 #fix
@@ -346,3 +345,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
