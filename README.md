@@ -4,6 +4,8 @@ It uses Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
 
 ------------  IMPORTANT -----------------
 INSTALL TESSERACT OCR ON YOUR PC BEFORE USING, THE MACRO DOESN'T WORK WITHOUT IT -> https://github.com/UB-Mannheim/tesseract/wiki
+
+Make sure it's installed on C:\Program Files\Tesseract-OCR\tesseract.exe
 -------------------------------------------------------------------------------
 
 -------- INTRODUCTION --------
