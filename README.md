@@ -61,7 +61,7 @@ Try using other colored backgrounds in the HTC, like these ones:
 - The macro says "Bot Stopped (Error or manually)" when I press F4/Start Macro
 
      It may be because you didn't open the app as administrator (the keyboard python library sometimes requires admin perms, idk why)
-     Or you don't have Tesseract installed, you can get it here: https://github.com/UB-Mannheim/tesseract/wiki (that's the thing that reads the text on ur screen)
+     Or you don't have Tesseract installed, you can get it here: https://github.com/UB-Mannheim/tesseract/wiki (that's the thing that reads the text on ur screen) (Shouldn't be an issue because the exe already has tesseract incorporated onto it, still, just in case)
 
 
 -------- CREDITS --------
