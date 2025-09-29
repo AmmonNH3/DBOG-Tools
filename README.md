@@ -30,7 +30,14 @@ Watch the tutorial:
 
 - The macro doesn't recognize (X) letter
 
-     Select a better area for the macro to read.
+     Select a better area for the macro to read. It works better when it's more packed, like this:
+
+<img width="587" height="83" alt="image" src="https://github.com/user-attachments/assets/70e260c1-03c0-431c-86b4-aac7d387a415" />
+
+Instead of doing this, which may cause the OCR to go nuts:
+
+<img width="682" height="128" alt="image" src="https://github.com/user-attachments/assets/cdf37b4a-964a-4b7f-b738-8f07f9232953" />
+
 
 - The macro is typing too fast and the other prompts get affected
 
