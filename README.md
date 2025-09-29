@@ -19,15 +19,15 @@ TROUBLESHOOTING
 
 - The macro doesn't recognize (X) letter
 
-Select a better area for the macro to read.
+     Select a better area for the macro to read.
 
 - The macro is typing too fast and the other prompts get affected
 
-Use the Health - Agility - Ki Control,etc presets I added, if that's too fast for you, just modify the Reading Speed slider to your liking.
+     Use the Health - Agility - Ki Control,etc presets I added, if that's too fast for you, just modify the Reading Speed slider to your liking.
 
 - The macro is not working on the HTC, or it barely works
 
-It may happen when the WASD prompt box has a white BG, like this:
+     It may happen when the WASD prompt box has a white BG, like this:
 
 <img width="546" height="157" alt="image" src="https://github.com/user-attachments/assets/b36a565e-19f7-4ce8-8def-5731ba7929ec" />
 
@@ -39,8 +39,8 @@ Try using other colored backgrounds in the HTC, like these ones:
 
 - The macro says "Bot Stopped (Error or manually)" when I press F4/Start Macro
 
-It may be because you didn't open the app as administrator (the keyboard python library sometimes requires admin perms, idk why)
-Or you don't have Tesseract installed, you can get it here: https://github.com/UB-Mannheim/tesseract/wiki (that's the thing that reads the text on ur screen)
+     It may be because you didn't open the app as administrator (the keyboard python library sometimes requires admin perms, idk why)
+     Or you don't have Tesseract installed, you can get it here: https://github.com/UB-Mannheim/tesseract/wiki (that's the thing that reads the text on ur screen)
 
 
 CREDITS
