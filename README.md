@@ -8,6 +8,9 @@ If the program doesn't work somehow, get TesseractOCR -> https://github.com/UB-M
 
 Make sure it's installed on C:\Program Files\Tesseract-OCR\tesseract.exe
 
+All the code is open source, if you wanna modify or improve on it, do as you will, credits would be appreciated.
+Windows may tag this program as malicious, which is not, not sure why this happens. 
+
 -------------------------------------------------------------------------------
 
 -------- INTRODUCTION --------
