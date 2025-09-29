@@ -1,4 +1,7 @@
 # DBOG-Tools
+
+DOWNLOAD LINK - VERSION 1.0.0 - https://github.com/AmmonNH3/DBOG-Tools/releases/tag/v1.0.0
+
 Macro for the DBOG gravity chamber.
 It uses Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
 
