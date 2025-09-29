@@ -41,7 +41,10 @@ Instead of doing this, which may cause the OCR to go nuts:
 
 - The macro is typing too fast and the other prompts get affected
 
-     Use the Health - Agility - Ki Control,etc presets I added, if that's too fast for you, just modify the Reading Speed slider to your liking.
+     Use the Health - Agility - Ki Control,etc presets, if that's too fast for you (may be because you have a slow pc, or lag), modify the Reading Speed slider to your liking.
+
+  <img width="197" height="61" alt="image" src="https://github.com/user-attachments/assets/eeefff90-9708-49eb-9e7f-60daafa8955f" />
+
 
 - The macro is not working on the HTC, or it barely works
 
