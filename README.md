@@ -6,16 +6,17 @@ It uses Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
 INSTALL TESSERACT OCR ON YOUR PC BEFORE USING, THE MACRO DOESN'T WORK WITHOUT IT -> https://github.com/UB-Mannheim/tesseract/wiki
 -------------------------------------------------------------------------------
 
-INTRODUCTION
+-------- INTRODUCTION --------
+
 Welcome to the DBOG gravity macro repo.
 I made this because I really got tired of the dumb Gravity Chamber training system, it's hard to get all stats with only 40 minutes.
 It uses Tesseract OCR, which basically reads the prompt on screen and plays the corresponding inputs.
 I hope this helps you unlocking your max potential.
 
-HOW DO I USE IT
+-------- HOW DO I USE IT --------
 Watch the tutorial:
 
-TROUBLESHOOTING
+-------- TROUBLESHOOTING --------
 
 - The macro doesn't recognize (X) letter
 
@@ -43,7 +44,7 @@ Try using other colored backgrounds in the HTC, like these ones:
      Or you don't have Tesseract installed, you can get it here: https://github.com/UB-Mannheim/tesseract/wiki (that's the thing that reads the text on ur screen)
 
 
-CREDITS
+-------- CREDITS --------
 
  - AmmonNH3, main code
  - spxeedy, thanks a lot for helping me fix the white bg bug.
