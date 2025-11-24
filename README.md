@@ -1,6 +1,6 @@
 # DBOG-Tools
 
-Download (Version 1.0.0): [GitHub Release](https://github.com/AmmonNH3/DBOG-Tools/releases/tag/v1.0.0)
+Download Latest Version (Version 1.1.0): [GitHub Release](https://github.com/AmmonNH3/DBOG-Tools/releases/tag/v1.1.0)
 
 This tool provides a macro for the DBOG Gravity Chamber. It uses [Tesseract OCR](https://github.com/UB-Mannheim/tesseract/wiki)
 to read on-screen prompts and automatically execute the correct inputs.
@@ -16,6 +16,20 @@ C:\Program Files\Tesseract-OCR\tesseract.exe
 The code is fully open source. You may modify or improve it as you wish. Credits would be appreciated.
 
 Windows may flag this program as malicious. I don't really know why, but this is not the case.
+
+# UPDATE
+
+Added a new option to switch between OLD and NEW OCRs, OLD code works perfectly with the GC's red floor, meanwhile the NEW code sometimes works with the HTC white background and stuff, only use it if you don't have any training partners.
+
+<img width="230" height="132" alt="image" src="https://github.com/user-attachments/assets/e37281a1-b040-41b0-a508-36e84744b225" />
+
+Just select the OCR mode before starting the macro. With the OLD code always remember to look at the ground where the red floor is.
+
+Like this:
+
+<img width="1920" height="920" alt="image" src="https://github.com/user-attachments/assets/d2dd368f-ed52-4b81-944d-dffdc48faee2" />
+
+Remember, this is with the OLD OCR code.
 
 -------------------------------------------------------------------------------
 
