@@ -21,6 +21,8 @@ Windows may flag this program as malicious. I don't really know why, but this is
 
 Added a new option to switch between OLD and NEW OCRs, OLD code works perfectly with the GC's red floor, meanwhile the NEW code sometimes works with the HTC white background and stuff, only use it if you don't have any training partners, the new ocr is kinda weird.
 
+YT Tutorial: https://www.youtube.com/watch?v=e2ePOKaFhwo
+
 <img width="230" height="132" alt="image" src="https://github.com/user-attachments/assets/e37281a1-b040-41b0-a508-36e84744b225" />
 
 Just select the OCR mode before starting the macro. With the OLD code always remember to look at the ground where the red floor is.
