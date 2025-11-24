@@ -64,20 +64,27 @@ if tesseract_cmd:
 else:
     print("Tesseract not found. Place the 'tesseract' carpet in the same path as the exe.")
 
-def preprocess_for_ocr(img_bgra: np.ndarray):
+def preprocess_for_ocr(img_bgra: np.ndarray, mode: str = "NEW (Experimental, for HTC)"):
     if img_bgra is None:
         return None
     gray = cv2.cvtColor(img_bgra, cv2.COLOR_BGRA2GRAY)
     gray = cv2.resize(gray, None, fx=3, fy=3, interpolation=cv2.INTER_CUBIC)
-    # Adaptive threshold instead of Otsu
-    th = cv2.adaptiveThreshold(gray, 255,
-                               cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-                               cv2.THRESH_BINARY_INV,
-                               31, 15)
-    return th
+    if mode == "Old (GC Red floor only)": #I'm old! Gya ha ha!
+        # gc only code, which works wonders :))
+        _, th = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        return th
+    else:
+        # htc experimental code (stupid white background I hate you so much i hope you die)
+        th = cv2.adaptiveThreshold(
+            gray, 255,
+            cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+            cv2.THRESH_BINARY_INV,
+            31, 15
+        )
+        return th
 
-def recognize_text(img_bgra: np.ndarray):
-    prep = preprocess_for_ocr(img_bgra)
+def recognize_text(img_bgra: np.ndarray, mode: str = "NEW (Experimental, for HTC)"):
+    prep = preprocess_for_ocr(img_bgra, mode)
     if prep is None:
         return ""
     config = "--psm 7 --oem 3 -c tessedit_char_whitelist=WASD"
@@ -105,6 +112,8 @@ class GameBotGUI:
         self.read_val_label = tk.StringVar(value=f"{self.interval_read.get():.2f}s")
         self.type_val_label = tk.StringVar(value=f"{self.interval_type.get():.3f}s")
 
+        self.ocr_mode = tk.StringVar(value="NEW (Experimental, for HTC)") #new is the exprimental htc code, old is gc code
+
         self._build_ui()
         self.preview_imgtk = None
         self.preview_loop()
@@ -119,7 +128,7 @@ class GameBotGUI:
 
     def _build_ui(self):
         self.root.title("DBOG Gravity Room Macro")
-        self.root.geometry("760x650")
+        self.root.geometry("760x720")
 
         left = ttk.Frame(self.root)
         left.pack(side="left", padx=8, pady=8)
@@ -132,6 +141,18 @@ class GameBotGUI:
 
         right = ttk.Frame(self.root)
         right.pack(side="left", fill="y", padx=8, pady=8)
+
+        ttk.Separator(right, orient="horizontal").pack(fill="x", pady=6)
+
+        ttk.Label(right, text="OCR Mode").pack(anchor="w")
+
+        combo = ttk.Combobox(
+            right,
+            textvariable=self.ocr_mode,
+            values=["NEW (Experimental, for HTC)", "Old (GC Red floor only)"],
+            state="readonly"
+        )
+        combo.pack(fill="x", pady=4)
 
         ttk.Button(right, text="Select Area (Drag)", command=self.open_selector).pack(fill="x", pady=4)
         ttk.Button(right, text="Start Macro", command=self.start_bot).pack(fill="x", pady=4)
@@ -274,7 +295,7 @@ class GameBotGUI:
                 if img is None:
                     time.sleep(self.interval_read.get())
                     continue
-                seq = recognize_text(img)
+                seq = recognize_text(img, mode=self.ocr_mode.get())
                 if seq:
                     self.root.after(0, lambda s=seq: self.last_detected.set(f"Last: {s}"))
                     try:
